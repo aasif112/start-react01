@@ -1,0 +1,42 @@
+name:  Deploy basic React App page on Surge
+
+on:
+  push: 
+    branches: [ master ]
+  pull_request: 
+    branches: [ master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+
+# Upto now, the starting requirement is done:
+
+# First install Node.js:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.3
+        with:
+         version: '20'
+
+# Second install yarn:
+      - name: GitHub Action for Yarn
+        uses: Borales/actions-yarn@v5.0.0
+        with:
+         cmd: install
+         
+ # make a build folder:
+      - name: Creating build
+        run: yarn build
+
+# Third install surge:  
+      - name: Installing Surge
+        run: npm install -g surge
+
+# Finally Deploy on surge:          
+      - name: Deploy on surge
+        run: surge ./build --domain https://asf-react-start.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      
+      
