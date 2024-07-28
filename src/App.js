@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Hello World</h1>
+      <ul>
+        <li>
+          <h3>Here we have developed first React-App page, Second time.</h3>
+        </li>
+        <li>
+        <h3>The Page is deployed on surge.sh</h3>
+        </li>
+        <li>
+        <h3>A GitHub work-flow is setup that starts on: push and on pull_request</h3>
+        </li>
+        <li>
+        <h3>This is bashir-work branch that will be merged by pull_request</h3>
+        </li>
+        <li>
+        <h3>pull_request: 28-07-2024</h3>
+        </li>
+      </ul>
     </div>
   );
 }
